@@ -27,7 +27,7 @@ podTemplate(
     def HELM_CHART_NAME = "questcode/backend-scm"
     def HELM_DEPLOY_NAME
     def CHARTMUSEUM_REPO_URL = "http://helm-chartmuseum:8080"
-    def NODE_PORT = "30020"
+    def NODE_PORT = "30030"
     
     // Start Pipeline
     node(LABEL_ID) {    
@@ -52,7 +52,7 @@ podTemplate(
                 KUBE_NAMESPACE = "staging"
                 ENVIRONMENT = "staging"
                 IMAGE_POXFIX = "-RC"
-                NODE_PORT = "31020"
+                NODE_PORT = "31030"
             }else{
                 def error = "Não existe pipeline para a branch ${GIT_BRANCH}"
                 echo error
